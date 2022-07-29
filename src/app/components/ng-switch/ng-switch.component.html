@@ -1,0 +1,21 @@
+<h2 class="text-center">NgSwitch</h2>
+
+Select Country:<select (change)="choice($any($event.target).value)">
+    <option>Select Country</option>
+    <option *ngFor="let c of countries" [value]="c.code">{{c.country}}</option>
+</select>
+
+<div [ngSwitch]="selectedCountry">
+    <div *ngSwitchCase="'ind'" class="jumbotron">
+        <h3>Indian Calling Code is +91</h3>
+    </div>
+    <div *ngSwitchCase="'pak'" class="jumbotron">
+        <h3>Pakistan Calling Code is +71</h3>
+    </div>
+    <div *ngSwitchCase="'aus'" class="jumbotron">
+        <h3>Australia Calling Code is +61</h3>
+    </div>
+    <div *ngSwitchDefault class="jumbotron">
+        <h3>Select a Country</h3>
+    </div>
+</div>
