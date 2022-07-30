@@ -12,6 +12,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserServiceService } from './services/user-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SingleUserComponent } from './components/single-user/single-user.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SingleUserComponent } from './components/single-user/single-user.compon
     AgePipe,
     SearchPipe,
     UsersComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
