@@ -8,6 +8,9 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { AgePipe } from './pipes/age.pipe';
 import { SearchPipe } from './pipes/search.pipe';
+import { UsersComponent } from './components/users/users.component';
+import { UserServiceService } from './services/user-service.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,15 @@ import { SearchPipe } from './pipes/search.pipe';
     ParentComponent,
     ChildComponent,
     AgePipe,
-    SearchPipe
+    SearchPipe,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,27 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr >
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">UserName</th>
+            <th scope="col">WebSite</th>
+            <th scope="col">City</th>
+            <th scope="col">Lat</th>
+            <th scope="col">Lon</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let user of userData ">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.website | titlecase}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.address.geo.lat |number:'2.3-5'}}</td>
+            <td>{{user.address.geo.lng |number:'3.3-5'}}</td>
+        </tr>
+
+    </tbody>
+</table>
