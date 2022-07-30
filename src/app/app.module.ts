@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { AgePipe } from './pipes/age.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NgSwitchComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    AgePipe
   ],
   imports: [
     BrowserModule,
