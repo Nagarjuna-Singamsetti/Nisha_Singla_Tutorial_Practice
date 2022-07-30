@@ -16,10 +16,10 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of userData ">
-                <td>{{user.id}}</td>
+                <td><a [routerLink]="['/user',user.id]">{{user.id}}</a></td>
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
-                <td>{{user.username}}</td>
+                <td><a [routerLink]="['/user',user.id]">{{user.username}}</a></td>
                 <td>{{user.website | titlecase}}</td>
                 <td>{{user.address.city}}</td>
                 <td>{{user.address.geo.lat |number:'2.3-5'}}</td>

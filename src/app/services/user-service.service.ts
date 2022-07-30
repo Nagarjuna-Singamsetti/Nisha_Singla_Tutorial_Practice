@@ -21,4 +21,8 @@ export class UserServiceService {
     return throwError(() => new Error("Some Internal Issue while making API Call"));
     //return throwError(() => new Error(error.message));
   }
+
+  getSingleUser(id:number){
+    return this._http.get("https://jsonplaceholder.typicode.com/users/"+id);
+  }
 }
