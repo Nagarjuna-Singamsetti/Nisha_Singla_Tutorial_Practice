@@ -15,6 +15,9 @@ import { SingleUserComponent } from './components/single-user/single-user.compon
 import { HomeComponent } from './components/home/home.component';
 import { AddressComponent } from './components/address/address.component';
 import { CompanyComponent } from './components/company/company.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { LocationComponent } from './components/location/location.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CompanyComponent } from './components/company/company.component';
     SingleUserComponent,
     HomeComponent,
     AddressComponent,
-    CompanyComponent
+    CompanyComponent,
+    AboutUsComponent,
+    LocationComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

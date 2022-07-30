@@ -18,6 +18,15 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/users">HTTP Call</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/about',
+        {
+          outlets:{
+                   'map':['location'],'feeds':['feedback']
+                  }
+        }
+        ]">About Us</a>
+      </li>
     </ul>
   </div>
 </nav>
