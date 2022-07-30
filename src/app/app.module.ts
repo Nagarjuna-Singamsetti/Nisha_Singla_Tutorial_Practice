@@ -11,6 +11,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { UsersComponent } from './components/users/users.component';
 import { UserServiceService } from './services/user-service.service';
 import {HttpClientModule} from '@angular/common/http';
+import { SingleUserComponent } from './components/single-user/single-user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
     ChildComponent,
     AgePipe,
     SearchPipe,
-    UsersComponent
+    UsersComponent,
+    SingleUserComponent
   ],
   imports: [
     BrowserModule,

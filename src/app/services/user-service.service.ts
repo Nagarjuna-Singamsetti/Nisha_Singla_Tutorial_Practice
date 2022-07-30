@@ -7,7 +7,7 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class UserServiceService {
-  private _url = 'https://jsonplaceholder.typicode.com/userss';
+  private _url = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private _http: HttpClient) { }
 
