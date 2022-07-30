@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddressComponent } from './components/address/address.component';
+import { CompanyComponent } from './components/company/company.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import { ParentComponent } from './components/parent/parent.component';
@@ -12,7 +14,14 @@ const routes: Routes = [
   { path: 'ngswitch', component: NgSwitchComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'user/:id', component: SingleUserComponent },
+  {
+    path: 'user/:id', component: SingleUserComponent,
+    children: [
+      { path: '', redirectTo: 'address', pathMatch: 'full' },
+      { path: 'address', component: AddressComponent },
+      { path: 'company', component: CompanyComponent }
+    ]
+  },
   { path: '**', redirectTo: 'home' }
 ];
 

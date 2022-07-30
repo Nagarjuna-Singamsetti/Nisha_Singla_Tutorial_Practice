@@ -17,5 +17,4 @@ export class SingleUserComponent implements OnInit {
       this.singleUser = user;
     })
   }
-
 }

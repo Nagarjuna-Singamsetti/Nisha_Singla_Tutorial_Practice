@@ -13,6 +13,8 @@ import { UserServiceService } from './services/user-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SingleUserComponent } from './components/single-user/single-user.component';
 import { HomeComponent } from './components/home/home.component';
+import { AddressComponent } from './components/address/address.component';
+import { CompanyComponent } from './components/company/company.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HomeComponent } from './components/home/home.component';
     SearchPipe,
     UsersComponent,
     SingleUserComponent,
-    HomeComponent
+    HomeComponent,
+    AddressComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
