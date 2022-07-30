@@ -8,12 +8,14 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class UsersComponent implements OnInit {
   userData: any = [];
+  errorMsg:string='Loading...';
   constructor(private _userService: UserServiceService) { }
 
   ngOnInit(): void {
-    this._userService.getAllUsers().subscribe((data) => {
-      this.userData = data;
-    })
+    this._userService.getAllUsers().subscribe(
+      (data) => {this.userData = data},
+      (error)=>{this.errorMsg=error}
+    )
   }
 
 }
