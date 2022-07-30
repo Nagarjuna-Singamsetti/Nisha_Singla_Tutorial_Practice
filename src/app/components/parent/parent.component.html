@@ -1,4 +1,6 @@
 <div>
     <h2 class="text-center">Parent Component</h2>
-<app-child [uname]="username"></app-child>
+    <h3>Message From Child:{{childData}}</h3>
+<app-child [uname]="username" (notify)="parentMethod($event)"></app-child>
+
 </div>

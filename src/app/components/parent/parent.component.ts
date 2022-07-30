@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   username:string;
+  childData:string;
+
   constructor() { 
-    this.username="Nagarjuna from Parent Class"
+    this.username="Nagarjuna from Parent Class";
+    this.childData='';
   }
 
   ngOnInit(): void {
   }
+parentMethod(data:string){
+  this.childData=data;
+}
 
 }
