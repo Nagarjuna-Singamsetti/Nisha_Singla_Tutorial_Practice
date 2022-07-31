@@ -19,6 +19,9 @@ import { LocationComponent } from './components/location/location.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 
 
 
@@ -37,14 +40,16 @@ import { AuthGuard } from './guards/auth.guard';
     CompanyComponent,
     AboutUsComponent,
     LocationComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [AuthGuard,AdminGuard],
+  providers: [AuthGuard,AdminGuard,UnsavedChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
