@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { canComponentLeave } from 'src/app/guards/unsaved-changes.guard';
 
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit {
-userName:FormControl=new FormControl();
-  constructor() { }
+export class AddUserComponent implements canComponentLeave {
+  userName: FormControl = new FormControl();
 
-  ngOnInit(): void {
+  canLeave(): boolean {
+    if (this.userName.dirty) {
+      return window.confirm('You have some unchanged changes.Save it before leaving!');
+    }
+    return true;
   }
-
 }
+

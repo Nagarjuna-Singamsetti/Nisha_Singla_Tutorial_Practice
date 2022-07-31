@@ -3,17 +3,20 @@ import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } f
 import { Observable } from 'rxjs';
 import { AddUserComponent } from '../components/add-user/add-user.component';
 
+export interface canComponentLeave {
+  canLeave: () => boolean;
+}
 @Injectable({
   providedIn: 'root'
 })
-export class UnsavedChangesGuard implements CanDeactivate<AddUserComponent> {
-  canDeactivate(component:AddUserComponent){
-    if(component.userName.dirty){
-return window.confirm('You have some unsaved changes. Are you sure you want to navigate?');
+export class UnsavedChangesGuard implements CanDeactivate<canComponentLeave> {
+  canDeactivate(component: canComponentLeave) {
+    if (component.canLeave) {
+      return component.canLeave();
     }
     return true;
   }
-   
-  }
-  
+
+}
+
 
