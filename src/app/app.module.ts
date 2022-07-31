@@ -22,6 +22,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
+import { ResolveGuard } from './guards/resolve.guard';
 
 
 
@@ -49,7 +50,7 @@ import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthGuard,AdminGuard,UnsavedChangesGuard],
+  providers: [AuthGuard,AdminGuard,UnsavedChangesGuard,ResolveGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,6 +13,7 @@ import { SingleUserComponent } from './components/single-user/single-user.compon
 import { UsersComponent } from './components/users/users.component';
 import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { ResolveGuard } from './guards/resolve.guard';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
   { path: 'parent', component: ParentComponent },
   {
     path: 'users', component: UsersComponent,
+    resolve: {
+      data: ResolveGuard,
+    }
     // canActivate: [AuthGuard] 
   },
   {
@@ -41,7 +45,7 @@ const routes: Routes = [
       { path: 'feedback', outlet: 'feeds', component: FeedbackComponent }
     ]
   },
-  { path: 'adduser', component: AddUserComponent,canDeactivate:[UnsavedChangesGuard] },
+  { path: 'adduser', component: AddUserComponent, canDeactivate: [UnsavedChangesGuard] },
   { path: '**', redirectTo: 'home' }
 ];
 
