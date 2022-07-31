@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AddressComponent } from './components/address/address.component';
 import { CompanyComponent } from './components/company/company.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'ngswitch', component: NgSwitchComponent },
   { path: 'parent', component: ParentComponent },
-  { path: 'users', component: UsersComponent },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
   {
     path: 'user/:id', component: SingleUserComponent,
     children: [

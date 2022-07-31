@@ -18,6 +18,8 @@ import { CompanyComponent } from './components/company/company.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LocationComponent } from './components/location/location.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [UserServiceService],
+  providers: [UserServiceService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
