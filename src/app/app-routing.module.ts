@@ -16,6 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ResolveGuard } from './guards/resolve.guard';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -46,6 +47,10 @@ const routes: Routes = [
     ]
   },
   { path: 'adduser', component: AddUserComponent, canDeactivate: [UnsavedChangesGuard] },
+  {
+    path: 'products',
+    loadChildren: () => import('./product-dash-board/product-dash-board.module').then(m => m.ProductDashBoardModule)
+  },
   { path: '**', redirectTo: 'home' }
 ];
 
