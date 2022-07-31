@@ -23,6 +23,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 import { ResolveGuard } from './guards/resolve.guard';
+import { ProductDashBoardModule } from './product-dash-board/product-dash-board.module';
 
 
 
@@ -49,6 +50,8 @@ import { ResolveGuard } from './guards/resolve.guard';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ProductDashBoardModule,
+
   ],
   providers: [AuthGuard,AdminGuard,UnsavedChangesGuard,ResolveGuard],
   bootstrap: [AppComponent]
