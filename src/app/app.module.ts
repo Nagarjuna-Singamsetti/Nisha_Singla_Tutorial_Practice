@@ -9,7 +9,6 @@ import { ChildComponent } from './components/child/child.component';
 import { AgePipe } from './pipes/age.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { UsersComponent } from './components/users/users.component';
-import { UserServiceService } from './services/user-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SingleUserComponent } from './components/single-user/single-user.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,8 +17,10 @@ import { CompanyComponent } from './components/company/company.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LocationComponent } from './components/location/location.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
-import { AuthGuard } from './auth.guard';
-import { AuthService } from './services/auth.service';
+import { AdminGuard } from './guards/admin.guard';
+import { AuthGuard } from './guards/auth.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [UserServiceService,AuthGuard,AuthService],
+  providers: [AuthGuard,AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

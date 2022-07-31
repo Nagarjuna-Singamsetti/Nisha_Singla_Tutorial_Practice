@@ -8,6 +8,9 @@ export class AuthService {
   constructor() { }
   
   isUserLoggedIn(){
+    return true;
+  }
+  isAdminLoggedIn(){
     return false;
   }
 }
