@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 import { ResolveGuard } from './guards/resolve.guard';
 import { RxJSComponent } from './rxjs/rx-js/rx-js.component';
+import { RxjsSubjectComponent } from './rxjs/rxjs-subject/rxjs-subject.component';
 
 
 
@@ -45,7 +46,8 @@ import { RxJSComponent } from './rxjs/rx-js/rx-js.component';
     LocationComponent,
     FeedbackComponent,
     AddUserComponent,
-    RxJSComponent
+    RxJSComponent,
+    RxjsSubjectComponent
   ],
   imports: [
     BrowserModule,
