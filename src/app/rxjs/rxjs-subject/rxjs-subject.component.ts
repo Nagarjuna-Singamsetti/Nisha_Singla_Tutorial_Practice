@@ -55,6 +55,33 @@ export class RxjsSubjectComponent implements OnInit {
 
 
     asyncSubjec$.subscribe(d => console.log(`AsyncSubject User2 ${d}`));
+  
+    //Async Subject With RealTime
+    const url = "https://restcountries.eu/rest/v2/name/india?fullText=true";
+
+    const cache :any= {};
+   function getCountryInfo(url: any){
+      if(!cache[url]){
+        //api call using fetch
+        cache[url]= new AsyncSubject();
+        fetch(url).
+        then(res => res.json())
+        .then(d => {
+              cache[url].next(d);
+              cache[url].complete();
+        })
+
+      }
+      return cache[url].asObservable();
+   }
+
+   getCountryInfo(url).subscribe((d: any) => console.log(d));
+
+   setTimeout(()=>{
+     getCountryInfo(url).subscribe((d: any) => console.log(d));
+
+   }, 3000);
+
+ }
   }
 
-}
