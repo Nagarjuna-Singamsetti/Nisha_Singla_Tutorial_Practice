@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-subject',
@@ -37,6 +37,24 @@ export class RxjsSubjectComponent implements OnInit {
     message$.next('Keep Learning');
 
     message$.subscribe(msg => console.log(`User2: ${msg}`));
+
+
+    // async subject
+
+    const asyncSubjec$ = new AsyncSubject();
+    asyncSubjec$.next("Value1");
+    asyncSubjec$.next("Value2");
+    asyncSubjec$.next("Value3");
+
+
+    asyncSubjec$.subscribe(d => console.log(`AsyncSubject User1 ${d}`));
+    asyncSubjec$.next("Value4");
+    asyncSubjec$.complete();
+    asyncSubjec$.next("Value5");
+    asyncSubjec$.next("Value6");
+
+
+    asyncSubjec$.subscribe(d => console.log(`AsyncSubject User2 ${d}`));
   }
 
 }
