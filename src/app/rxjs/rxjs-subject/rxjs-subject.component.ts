@@ -25,7 +25,7 @@ export class RxjsSubjectComponent implements OnInit {
 
 
     //Replay Subject
-    const message$ = new ReplaySubject(3i);
+    const message$ = new ReplaySubject(3);
     message$.next('Hello..');
     message$.next('How are you ?');
     message$.next('From where are you ?');
