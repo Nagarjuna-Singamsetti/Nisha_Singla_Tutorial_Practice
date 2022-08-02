@@ -15,6 +15,7 @@ import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { ResolveGuard } from './guards/resolve.guard';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
+import { RxJSComponent } from './rxjs/rx-js/rx-js.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./product-dash-board/product-dash-board.module').then(m => m.ProductDashBoardModule)
   },
+  {path:'rxjs',component:RxJSComponent},
   { path: '**', redirectTo: 'home' }
 ];
 

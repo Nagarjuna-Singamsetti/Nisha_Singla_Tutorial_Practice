@@ -23,6 +23,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UnsavedChangesGuard } from './guards/unsaved-changes.guard';
 import { ResolveGuard } from './guards/resolve.guard';
+import { RxJSComponent } from './rxjs/rx-js/rx-js.component';
 
 
 
@@ -43,7 +44,8 @@ import { ResolveGuard } from './guards/resolve.guard';
     AboutUsComponent,
     LocationComponent,
     FeedbackComponent,
-    AddUserComponent
+    AddUserComponent,
+    RxJSComponent
   ],
   imports: [
     BrowserModule,
